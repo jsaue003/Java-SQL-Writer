@@ -158,28 +158,29 @@ public class FirstWindow extends JFrame {
 //		String column2input = column2Field.getText();
 //		String databaseInput = databaseField.getText();
 //		String tableInput = tableField.getText();
-		//String whereField1Input = whereField1.getText();
-		//String whereField2Input = whereField2.getText();
-		//String orderFieldInput = orderField.getText();
+//		String whereField1Input = whereField1.getText();
+//		String whereField2Input = whereField2.getText();
+//		String orderFieldInput = orderField.getText();
 		
 		//create a variable selectClause that will generate a full select Query
-//		String selectClause = "SELECT " + "[" + column1Field.getText() + "]" + ", " + "[" + column2input + "]" + "FROM " 
-//				+ "[" + databaseInput + "]" + "." + "[" + tableInput + "];";
+		
 
+		
 		JButton btnExecute = new JButton("Execute");
 		btnExecute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 //set our output box to the calculate selectClause
-				
-				String column1input = column1Field.getText();
+				String column1input = column1Field.getText(); //also, duplicity in the select clause...
 				String column2input = column2Field.getText();
 				String databaseInput = databaseField.getText();
 				String tableInput = tableField.getText();
+				String whereField1Input = whereField1.getText();
+				String whereField2Input = whereField2.getText();
+				String orderFieldInput = orderField.getText();
 				
 				String selectClause = "SELECT " + "[" + column1Field.getText() + "]" + ", " + "[" + column2input + "]" + "FROM " 
 						+ "[" + databaseInput + "]" + "." + "[" + tableInput + "];";
 				
-				outputField.setText(selectClause);
+				outputField.setText(selectClause); //set our output box to the calculate selectClause
 				
 			}
 		});
@@ -194,7 +195,8 @@ public class FirstWindow extends JFrame {
 				whereField2.setText("");
 				orderField.setText("");
 				column1Field.setText("");
-				column2Field.setText("");				
+				column2Field.setText("");
+				outputField.setText(""); //issue here
 			}
 		});
 		
